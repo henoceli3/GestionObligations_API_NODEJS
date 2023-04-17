@@ -2,24 +2,26 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('suivi_obligation', {
     id_suivi: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     etat_conformite: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     date_suivi: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
+      type: DataTypes.DATE,
+      allowNull: true,
+      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
     },
     commentaire: {
       type: DataTypes.TEXT,
       allowNull: true
     },
     fichier_joint: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     id_obligation: {

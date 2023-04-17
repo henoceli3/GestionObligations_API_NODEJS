@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('obligation', {
     id_obligation: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -20,11 +21,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     date_creation: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
     },
-    date_mise_a_jour: {
+    date_maj: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
     },
     id_entite: {
       type: DataTypes.INTEGER,

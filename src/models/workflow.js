@@ -2,25 +2,28 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('workflow', {
     id_workflow: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
     etat_validation: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     utilisateur_en_charge: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    date_debut_validation: {
+    date_debut: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
     },
-    date_fin_validation: {
+    date_fin: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
     },
     commentaire_validation: {
       type: DataTypes.TEXT,

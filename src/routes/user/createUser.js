@@ -3,7 +3,7 @@ const { models } = require("../../db/sequelize")
 
 //point de terminaison pour la création d'un utilisateur
 module.exports = (app) => {
-    app.post('api/user', (req, res) => {
+    app.post('/api/user', (req, res) => {
         models.utilisateur.create(req.body)
             .then((user) => {
                 const message = `L-utilisateur ${req.body.nom} a été crée avec succès`

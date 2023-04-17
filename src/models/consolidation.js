@@ -1,31 +1,31 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('entite', {
-    id_entite: {
+  return sequelize.define('consolidation', {
+    id_consolidation: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
     },
-    nom: {
-      type: DataTypes.STRING(255),
+    nombre_obligations: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    adresse: {
-      type: DataTypes.STRING(255),
+    nombre_obligations_conformes: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    ville: {
-      type: DataTypes.STRING(255),
+    nombre_obligations_non_conformes: {
+      type: DataTypes.INTEGER,
       allowNull: true
     },
-    pays: {
-      type: DataTypes.STRING(255),
+    nombre_obligations_en_cours: {
+      type: DataTypes.INTEGER,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'entite',
+    tableName: 'consolidation',
     timestamps: false,
     indexes: [
       {
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id_entite" },
+          { name: "id_consolidation" },
         ]
       },
     ]

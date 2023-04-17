@@ -1,4 +1,5 @@
 var DataTypes = require("sequelize").DataTypes;
+var _consolidation = require("./consolidation");
 var _entite = require("./entite");
 var _obligation = require("./obligation");
 var _suivi_obligation = require("./suivi_obligation");
@@ -6,6 +7,7 @@ var _utilisateur = require("./utilisateur");
 var _workflow = require("./workflow");
 
 function initModels(sequelize) {
+  var consolidation = _consolidation(sequelize, DataTypes);
   var entite = _entite(sequelize, DataTypes);
   var obligation = _obligation(sequelize, DataTypes);
   var suivi_obligation = _suivi_obligation(sequelize, DataTypes);
@@ -24,6 +26,7 @@ function initModels(sequelize) {
   utilisateur.hasMany(suivi_obligation, { as: "suivi_obligations", foreignKey: "id_utilisateur"});
 
   return {
+    consolidation,
     entite,
     obligation,
     suivi_obligation,
