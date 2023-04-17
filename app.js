@@ -22,6 +22,12 @@ app.get('/', (req, res) => {
 /* SUIVI OBLIGATION */
 
 /* UTILISATEUR */
+require('./src/routes/user/createUser')(app)
+require('./src/routes/user/findUserById')(app)
+require('./src/routes/user/updateUser')(app)
+require('./src/routes/user/deleteUser')(app)
+require('./src/routes/user/findAllUser')(app)
+crud
 
 /* WORKFLOW */
 
