@@ -8,22 +8,16 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     etat_validation: {
-      type: DataTypes.STRING(50),
-      allowNull: true
-    },
-    utilisateur_en_charge: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(20),
       allowNull: true
     },
     date_debut: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
+      allowNull: true
     },
     date_fin: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
+      allowNull: true
     },
     commentaire_validation: {
       type: DataTypes.TEXT,

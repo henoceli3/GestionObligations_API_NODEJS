@@ -12,8 +12,8 @@ module.exports = (app) => {
                         const message = "L'utilisateur demandé n'existe pas"
                         res.status(404).json({ message })
                     }
-                    const message = `L'utilisateur avec l'identifiant n°${article.ID_ARTICLE} a été modifié avec succès`
-                    res.status(200).json({ message, data: article })
+                    const message = `L'utilisateur avec l'identifiant n°${user.id_utilisateur} a été modifié avec succès`
+                    res.status(200).json({ message, data: user })
                 })
             })
             .catch(error => {

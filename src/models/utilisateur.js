@@ -11,12 +11,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    adresse_email: {
+    email: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
     role: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(50),
       allowNull: true
     },
     mot_de_passe: {
@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'entite',
+        model: 'entité',
         key: 'id_entite'
       }
     }

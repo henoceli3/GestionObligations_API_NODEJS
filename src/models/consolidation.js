@@ -7,19 +7,19 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-    nombre_obligations: {
+    nb_obligations: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    nombre_obligations_conformes: {
+    nb_obligations_conformes: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    nombre_obligations_non_conformes: {
+    nb_obligations_non_conformes: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
-    nombre_obligations_en_cours: {
+    nb_obligations_en_cours: {
       type: DataTypes.INTEGER,
       allowNull: true
     }

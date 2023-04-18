@@ -21,19 +21,17 @@ module.exports = function(sequelize, DataTypes) {
     },
     date_creation: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
+      allowNull: true
     },
     date_maj: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
+      allowNull: true
     },
     id_entite: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'entite',
+        model: 'entité',
         key: 'id_entite'
       }
     }

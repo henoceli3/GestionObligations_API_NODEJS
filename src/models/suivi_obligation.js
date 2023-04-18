@@ -8,13 +8,12 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     etat_conformite: {
-      type: DataTypes.STRING(50),
+      type: DataTypes.STRING(20),
       allowNull: true
     },
     date_suivi: {
       type: DataTypes.DATE,
-      allowNull: true,
-      defaultValue: Sequelize.Sequelize.fn('current_timestamp')
+      allowNull: true
     },
     commentaire: {
       type: DataTypes.TEXT,
